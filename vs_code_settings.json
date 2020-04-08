@@ -1,0 +1,19 @@
+{
+    "window.zoomLevel": 0,
+    "editor.insertSpaces": true,
+    "editor.rulers": [80],
+    "editor.tabSize": 2,
+    "editor.lineNumbers": "relative",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn":80,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#78accc"
+    },
+    "workbench.colorTheme": "City Lights"
+}
+
