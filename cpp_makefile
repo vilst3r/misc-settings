@@ -1,0 +1,27 @@
+BUILD_DIR := cpp_build
+SRC_DIR := .
+
+CXX_COMPILER := g++
+CXX_FLAGS := -std=c++14 -pthread -Werror -Wno-unused-variable -Wno-sign-compare
+CXX_FLAGS_DEBUG := $(CXX_FLAGS) -g -O0
+
+LAST_MODIFIED_CXX_FILE = $(notdir $(basename \
+				$(shell ls -rt $(SRC_DIR)/*\.cc | tail -1)))
+
+BUILD_FILE := $(BUILD_DIR)/$(LAST_MODIFIED_CXX_FILE)
+SRC_FILE := $(SRC_DIR)/$(LAST_MODIFIED_CXX_FILE).cc
+
+# Compile & run the last modified file.
+last:
+	make $(BUILD_DIR)
+	$(CXX_COMPILER) $(CXX_FLAGS_DEBUG) -o $(BUILD_FILE) $(SRC_FILE)
+	$(BUILD_FILE)
+
+.PHONY: last
+
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+clean:
+	rm -r $(BUILD_DIR)
+.PHONY: clean
