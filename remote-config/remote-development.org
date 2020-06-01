@@ -1,0 +1,42 @@
+* Remote Development
+
+** Setup Instructions (from Google VM)
+   1. Set up SSH keypair in "~/.ssh"
+   2. Upload public SSH key to Cloud Provider
+   3. SSH into VM instance to cache authorization in "~/.ssh/known_hosts"
+      - "ssh -i <private-ssh-key> <username>@<host-ip>"
+   4. SCP the following directories
+      - dotfiles
+        - "scp -r <dotfiles-dir> <username>@<host-ip>:"
+      - misc-settings
+        - "scp -r <misc-settings-dir> <username>@<host-ip>:"
+   5. Run "<misc-settings-dir>/remote-config/ubuntu_debian_vm_setup.sh" to
+      install all necessary system binaries
+   6. Copy over dotfiles into the home repository & source them for use
+   7. Lastly, configure $PATH variable in your bash settings to include
+      "~/.local/bin" (may be different on other cloud instances)
+   8. (Optional) Install any necessary packages from pyp in "<misc-settings-dir>/pyp-leaves"
+
+** Emacs
+
+*** Setup Notes
+
+**** Map special control sequences to escape sequences in the terminal keymapper
+
+**** In emacs, bind incompatible keybindings to those escape sequences
+
+**** Evil-mode doesn't work with ESC key problems
+
+*** Python Environment Issues
+
+**** Elpy won't work properly with proper xref-indexing, need the following:
+     - "pip install virtualenv -user", the binary is located in "~/.local/bin"
+       which is required in $PATH from the setup instructions
+     - Apply (setq elpy-rpc-python-command "python3") for Elpy to use it's own
+       python 3 virtualenv which includes jedi, black and all the packages
+       needed for development
+     - Most of the issue should be resolved if elpy-config works
+
+** Vim
+
+*** No complications so far
