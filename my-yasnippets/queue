@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: queue
+# key: QUE
+# --
+queue<$2> $3;

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: unordered_map
+# key: UMAP
+# --
+unordered_map<$2, $3> $4

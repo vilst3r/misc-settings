@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: range_for
+# key: rfor
+# --
+for (${1:auto} : ${2:container}) {
+    $3
+}

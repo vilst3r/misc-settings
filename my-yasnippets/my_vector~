@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: my_vector
+# key: VEC
+# --
+vector<$2> $3
