@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: unordered_set
-# key: USET
-# --
-unordered_set<$2> $0
